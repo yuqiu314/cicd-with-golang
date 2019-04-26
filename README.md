@@ -11,3 +11,4 @@ Using Travis-CI and Heroku to automate CI/CD
 6. Add .travis.yml file
 7. You could see it is building on Travis
 8. Add main_test.go as unit test.
+9. Add 2 files: Procfile, heroku.yml
