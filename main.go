@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -20,5 +21,10 @@ func GetMainEngine() *gin.Engine {
 	return r
 }
 func main() {
-	GetMainEngine().Run(":80")
+	// Heroku will have a PORT environment variable
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	GetMainEngine().Run(":"+port)
 }
