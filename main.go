@@ -20,5 +20,5 @@ func GetMainEngine() *gin.Engine {
 	return r
 }
 func main() {
-	GetMainEngine().Run(":8080")
+	GetMainEngine().Run(":80")
 }
