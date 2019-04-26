@@ -6,7 +6,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+// GetMainEngine is an extract router for easy unit testing
+func GetMainEngine() *gin.Engine {
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.String(200, fmt.Sprintf("London bridge is falling down"))
@@ -16,5 +17,8 @@ func main() {
 			"message": "pong",
 		})
 	})
-	r.Run()
+	return r
+}
+func main() {
+	GetMainEngine().Run(":8080")
 }
